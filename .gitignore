@@ -1,0 +1,9 @@
+# Hidden files
+.*
+*~
+!.gitignore
+
+# Node.js
+logs
+*.log
+node_modules
