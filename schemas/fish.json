@@ -1,0 +1,122 @@
+{
+  "schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Fish",
+  "description": "List of fish in Animal Crossing: New Leaf",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "object",
+        "properties": {
+          "en": {
+            "type": "string",
+            "required": true
+          },
+          "jp": {
+            "type": "string",
+            "required": true
+          }
+        }
+      },
+      "location": {
+        "type": "string",
+        "required": true
+      },
+      "price": {
+        "type": "integer",
+        "required": "true",
+        "minimum": 0
+      },
+      "months": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "required": true
+            },
+            "month": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 12,
+              "required": "true"
+            },
+            "start": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 31,
+              "default": 1
+            },
+            "end": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 31,
+              "default": 31
+            },
+            "spawn": {
+              "type": "array",
+              "required": true,
+              "items": {
+                "type": "object",
+                "properties": {
+                  "start": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 23
+                  },
+                  "end": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 23
+                  },
+                  "all_day": {
+                    "type": "boolean",
+                    "default": false
+                  },
+                  "rarity": {
+                    "type": "string",
+                    "enum": ["very common", "common", "rare", "very rare"]
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "island": {
+        "type": "array",
+        "default": [],
+        "items": {
+          "type": "object",
+          "properties": {
+            "start": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 23
+            },
+            "end": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 23
+            },
+            "all_day": {
+              "type": "boolean",
+              "default": false
+            },
+            "rarity": {
+              "type": "string",
+              "enum": ["very common", "common", "rare", "very rare"]
+            }
+          }
+        }
+      },
+      "shadow": {
+        "type": "string",
+        "enum": ["thin", "tiny", "small", "medium", "large", "very large", "huge", "huge with fin"],
+        "required": true
+      }
+    }
+  }
+}
