@@ -1,3 +1,5 @@
+**THIS PROJECT IS NO LONGER BEING ACTIVELY MAINTAINED**
+
 Animal Crossing: New Leaf data from multiple fansites compiled and converted into JSON files.
 
 Sources
